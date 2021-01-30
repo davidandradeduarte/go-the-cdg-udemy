@@ -32,3 +32,7 @@ _(in progress)_
 * There are several other types that behave the same. _(Reference types vs Value types)_
 * Everything in Go is passed by value. Even pointers!
 * `map` is just a key/value dictionary.
+* Go doesn't support function overloading. One can only have one function with the same name inside the same package.
+* You can only have functions with the same name if they have different receivers.
+* You don't specifically implement interfaces. Your "sub type" will only be converted to the type's interface if it implements all the methods inside the interface.
+* 
