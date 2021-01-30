@@ -31,4 +31,4 @@ _(in progress)_
 * Since slices point to an array in memory, when you update slice values inside a different function that received the slice as value (copy of the original memory address), you will be updating the original array. This does not happen when you append to or remove from a slice, because since arrays are fixed sized, a new array will be created holding a different memory address.
 * There are several other types that behave the same. _(Reference types vs Value types)_
 * Everything in Go is passed by value. Even pointers!
-* 
+* `map` is just a key/value dictionary.
