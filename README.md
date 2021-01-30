@@ -19,3 +19,6 @@ _(in progress)_
 * slice range select `x[0:2]` 2 is not inclusive. Can be abbreviated to `x[:2]` (from 0 to 1 inclusive) or `x[1:]` (from 1 to last element).
 * Go allows multiple return values in functions. `(string, int)` on function signature and `return value1, value1` on return statement. On variable assignment `val1, val2 := multipleReturnFunc()`.
 * Type conversion `[]byte("Hi there")` converts a string to a byte slice (decimal).
+* Error handling is done via the error type returned on functions. If error comes `nil` there was no error.
+* You can use multiple assignment and initialization as so `x, y := 1, "test"` (initialization) `x, y = 5, "dog"` (assignment).
+* Testing - files should be named as `<test-scope>_test.go`; functions should start with `Test<WhatWeAreTesting>`; Functions receive `*testing.T` as a parameter to allow test runner access to state/logging.
