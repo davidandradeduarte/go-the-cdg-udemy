@@ -35,4 +35,7 @@ _(in progress)_
 * Go doesn't support function overloading. One can only have one function with the same name inside the same package.
 * You can only have functions with the same name if they have different receivers.
 * You don't specifically implement interfaces. Your "sub type" will only be converted to the type's interface if it implements all the methods inside the interface.
-* 
+* There are concrete types and interface types. Concrete types can be created with the corresponding value type, interfaces don't.
+* Go doesn't have generic types.
+* You don't need to define that a type implements an interface. Go only converts that type to the interface type if it implements all the defined functions inside the interface. There's no direct linkage.
+* You can use interfaces as struct fields or inside other interfaces.
