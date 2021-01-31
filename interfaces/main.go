@@ -4,7 +4,6 @@ import "fmt"
 
 type bot interface {
 	getGreeting() string
-	xpto()
 }
 
 type englishBot struct{}
