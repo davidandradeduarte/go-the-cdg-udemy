@@ -39,3 +39,15 @@ _(in progress)_
 * Go doesn't have generic types.
 * You don't need to define that a type implements an interface. Go only converts that type to the interface type if it implements all the defined functions inside the interface. There's no direct linkage.
 * You can use interfaces as struct fields or inside other interfaces.
+* Go routines execute inside a go scheduler. The behaviour is different when you have more than one CPU core. Go, by default, tries to execute go routines in only only one core. The scheduler runs one routine until it finishes or makes a blocking call, and swaps between go routines to efficiently manage the code execution. If you have more than one core (N), Go will run N go routines for each core.
+* Concurrency != Paralelism. You only have real paralelism when you have more than one core. You do have concurrency (multiple threads executing code) on a single core tho, but they don't execute at the same time. Even if the schedulers context switchs from fraction to fraction of a nanosecond.
+* Everytime a program starts a main go routine is created and it's responsible for the program's lifetime.
+* You can start a child go routine by typying `go` before a function call. e.g `go getSomething()`
+* Channels are used to communicate between go routines.
+* Channels can only send messages of the same data type, defined at creation.
+* Creating a channel: `c := make(chan string)`
+* You need to pass the channel to the go routine function's arguments, just like any other argument. e.g `func fetch(string url, c chan string)`
+* Send a message to the channel `c <- "message"`.
+* Get the value from a channel `<-c`
+* Waiting to receive messages from a channel is a blocking thread.
+* 
