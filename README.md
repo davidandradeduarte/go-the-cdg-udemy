@@ -50,4 +50,12 @@ _(in progress)_
 * Send a message to the channel `c <- "message"`.
 * Get the value from a channel `<-c`
 * Waiting to receive messages from a channel is a blocking thread.
-* 
+* Infinite loop `for { ... }`
+* You can use the `for m := range channel` syntax to wait for a message to be sent to a channel.
+* Go function literals are lambdas:
+    ```golang
+    func() {
+        fmt.Println("I'm a function literal!")
+    }()
+    ```
+* Never try to access the same variables from a different child routine or main routine. Instead, rely on the fact that Go is a pass by value language and pass them to your go routines via function arguments or channels.
